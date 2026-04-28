@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-brand-navy text-white py-16 md:py-24 border-t border-white/5">
+    <footer className="bg-blue-deep text-white py-16 md:py-24 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* CONTENT COLUMNS */}
@@ -22,7 +22,7 @@ const Footer = () => {
               
               <a 
                 href="mailto:admin@modozo.fashion" 
-                className="hover:text-brand-yellow transition-colors duration-300"
+                className="hover:text-yellow-400 transition-colors duration-300"
               >
                 Email: admin@modozo.fashion
               </a>
@@ -42,7 +42,7 @@ const Footer = () => {
             <div className="flex flex-col gap-4 text-gray-400">
               <a 
                 href="#about" 
-                className="text-base font-normal hover:text-brand-yellow hover:underline underline-offset-8 decoration-1 transition-all duration-300"
+                className="text-base font-normal hover:text-yellow-400 hover:underline underline-offset-8 decoration-1 transition-all duration-300"
               >
                 About Us
               </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-base font-normal hover:text-brand-yellow hover:underline underline-offset-8 decoration-1 transition-all duration-300"
+                className="text-base font-normal hover:text-yellow-400 hover:underline underline-offset-8 decoration-1 transition-all duration-300"
               >
                 LinkedIn
               </a>

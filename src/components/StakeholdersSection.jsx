@@ -520,8 +520,9 @@ const StakeholdersSection = () => {
           z-index: 8;
           padding: 14px 32px;
           border-radius: 100px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(255,255,255,0.08);
+          background: #ffffff;
+          border: 1px solid rgba(255,255,255,0.9);
+          backdrop-filter:blur(10px);
           transition: all 0.5s ease;
           display: flex;
           align-items: center;
@@ -535,13 +536,13 @@ const StakeholdersSection = () => {
         .nw-logo-img {
           height: 34px;
           width: auto;
-          opacity: 0.85;
-          filter: brightness(1.1);
+          opacity: 1;
+          filter: none;
           transition: all 0.4s;
         }
         .nw-logo-node--pulse .nw-logo-img {
           opacity: 1;
-          filter: brightness(1.4);
+          filter:  drop-shadow(0 0 8px rgba(34,197,94,0.6));
         }
 
         /* ═══════ RESPONSIVE ═══════ */

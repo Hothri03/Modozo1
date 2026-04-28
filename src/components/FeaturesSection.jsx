@@ -18,7 +18,7 @@ const WorkflowAnimation = ({ active }) => (
             : { y: i % 2 === 0 ? -10 : 10, opacity: 0.6, scale: 0.95 }
           }
           transition={{ duration: 0.6, delay: i * 0.1, ease: "easeOut" }}
-          className="w-10 h-10 md:w-12 md:h-12 bg-white/8 rounded-lg flex items-center justify-center border border-white/10 shadow-sm"
+          className="w-10 h-10 md:w-12 md:h-12 bg-yellow-100 rounded-lg flex items-center justify-center border border-yellow-300 shadow-sm"
         >
           <div className="w-5 h-5 md:w-6 md:h-6 rounded bg-brand-yellow/50" />
         </motion.div>
@@ -86,10 +86,10 @@ const CommunicationAnimation = ({ active }) => (
           ease: "easeInOut",
           times: [0, 0.4, 0.8, 1]
         }}
-        className="absolute px-2 md:px-3 py-1 bg-white/8 border border-white/10 rounded-full shadow-md z-0 flex items-center gap-1"
+        className="absolute px-2 md:px-3 py-1 bg-white border border-yellow-200 rounded-full shadow-md z-0 flex items-center gap-1"
       >
         <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-yellow rounded-full" />
-        <div className="w-4 h-1 md:w-6 md:h-1 bg-white/15 rounded-full" />
+        <div className="w-4 h-1 md:w-6 md:h-1 bg-yellow-300 rounded-full" />
       </motion.div>
     ))}
   </div>
@@ -99,12 +99,12 @@ const CommunicationAnimation = ({ active }) => (
 const VisibilityAnimation = ({ active }) => (
   <div className="w-full h-32 flex flex-col justify-center gap-2 px-10 md:px-14">
     {[70, 45, 90].map((w, i) => (
-      <div key={i} className="h-2.5 md:h-3 bg-white/8 rounded-full overflow-hidden w-full">
+      <div key={i} className="h-2.5 md:h-3 bg-yellow-200 rounded-full overflow-hidden w-full">
         <motion.div
           initial={{ width: "20%" }}
           animate={active ? { width: `${w}%` } : { width: "30%" }}
           transition={{ duration: active ? 1 : 2, delay: i * 0.1, ease: "easeInOut" }}
-          className="h-full bg-brand-yellow"
+          className="h-full bg-blue-deep"
         />
       </div>
     ))}
@@ -168,13 +168,13 @@ const CollaborationAnimation = ({ active }) => {
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-brand-yellow rounded-full z-20 border-2 border-white flex items-center justify-center shadow-lg"
         >
-          <div className="w-1.5 h-1.5 bg-white/30 rounded-full" />
+          <div className="w-1.5 h-1.5 bg-white rounded-full" />
         </motion.div>
 
         {outerNodes.map((pos, i) => (
           <motion.div
             key={i}
-            className="absolute -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white/15 rounded-full z-10 border-2 border-brand-yellow flex items-center justify-center shadow-sm"
+            className="absolute -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-yellow-100 rounded-full z-10 border-2 border-blue-deep flex items-center justify-center shadow-sm"
             style={{ left: pos.x, top: pos.y }}
           />
         ))}
@@ -186,18 +186,18 @@ const CollaborationAnimation = ({ active }) => {
 // 5. Precision Control: Continuous flow animation
 const ControlAnimation = ({ active }) => (
   <div className="w-full h-32 flex items-center justify-center px-10">
-    <div className="w-full h-1 relative bg-white/8 rounded-full overflow-hidden">
+    <div className="w-full h-1 relative bg-yellow-200 rounded-full overflow-hidden">
       <motion.div
         animate={{ x: ["-100%", "100%"] }}
         transition={{ duration: active ? 1.5 : 3, repeat: Infinity, ease: "linear" }}
-        className="absolute h-full w-1/2 bg-gradient-to-r from-transparent via-brand-yellow/80 to-transparent"
+        className="absolute h-full w-1/2 bg-gradient-to-r from-transparent via-blue-deep/60 to-transparent"
       />
       {active && [0,1,2].map(i => (
         <motion.div
           key={i}
           animate={{ x: ["-100%", "100%"] }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: i * 0.6 }}
-          className="absolute h-full w-[10px] bg-brand-yellow blur-[2px]"
+          className="absolute h-full w-[10px] bg-blue-deep blur-[2px]"
         />
       ))}
     </div>
@@ -248,19 +248,19 @@ const FeatureStrip = ({ feature, index }) => {
       transition={{ duration: 0.5, delay: index * 0.05 }}
       className={`
         flex items-center w-full px-6 md:px-10 h-[90px] md:h-[105px]
-        rounded-[20px] shadow-[0_4px_16px_rgba(0,0,0,0.2)]
+        rounded-[20px] shadow-[0_4px_16px_rgba(0,0,0,0.05)]
         group cursor-default transition-all duration-400 border border-transparent
-        ${isHovered ? 'shadow-[0_12px_24px_rgba(0,0,0,0.3)] border-brand-yellow/30' : ''}
+        ${isHovered ? 'shadow-[0_12px_24px_rgba(0,0,0,0.08)] border-blue-deep/30' : ''}
         ${isEven ? 'flex-row' : 'flex-row-reverse'}
       `}
-      style={{ background: 'rgba(255,255,255,0.04)' }}
+      style={{ background: 'white' }}
     >
       {/* 50% Text Section */}
       <div className={`w-1/2 flex flex-col ${isEven ? 'items-start text-left' : 'items-end text-right'}`}>
-        <h3 className="text-[14px] md:text-[16px] font-bold text-white tracking-tight leading-tight mb-1">
+        <h3 className="text-[14px] md:text-[16px] font-bold text-text-primary tracking-tight leading-tight mb-1">
           {feature.title}
         </h3>
-        <p className="text-[11px] md:text-[12px] text-white/35 font-medium leading-tight max-w-[280px]">
+        <p className="text-[11px] md:text-[12px] text-text-muted font-medium leading-tight max-w-[280px]">
           {feature.desc}
         </p>
       </div>
@@ -284,7 +284,7 @@ const FeatureStrip = ({ feature, index }) => {
 
 const FeaturesSection = () => {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden" style={{ background: '#0B1A33' }}>
+    <section className="relative py-16 md:py-24 overflow-hidden" style={{ background: '#FFF7D6' }}>
       <div className="max-w-[1000px] mx-auto px-6">
         {/* Section Header */}
         <div className="mb-6 md:mb-8 text-center">
@@ -292,7 +292,7 @@ const FeaturesSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-serif text-white"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-serif text-text-primary"
           >
             What Makes This Powerful
           </motion.h2>

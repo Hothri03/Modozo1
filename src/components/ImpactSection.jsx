@@ -336,11 +336,11 @@ const BeforeAfterVisual = ({ started = false }) => {
   );
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto mb-10 md:mb-16 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 bg-brand-navy shadow-inner flex flex-col">
+    <div className="relative w-full max-w-3xl mx-auto mb-10 md:mb-16 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-white/10 border border-white/20 bg-blue-deep shadow-inner flex flex-col">
       <div 
         ref={wipeLineRef} 
         className="absolute inset-y-0 pointer-events-none z-30" 
-        style={{ width: '2px', left: '0%', opacity: 0, background: 'linear-gradient(to bottom, transparent, #FFD54F, transparent)', boxShadow: '0 0 15px rgba(255,213,79,0.5)' }} 
+        style={{ width: '2px', left: '0%', opacity: 0, background: 'linear-gradient(to bottom, transparent, #FFD84D, transparent)', boxShadow: '0 0 15px rgba(255,216,77,0.5)' }} 
       />
       <div className="relative px-6 pt-5 pb-2 flex-shrink-0 h-12">
         <div ref={beforeLabelsRef} className="absolute inset-0 px-6 pt-5 flex justify-between">
@@ -349,7 +349,7 @@ const BeforeAfterVisual = ({ started = false }) => {
         </div>
         <div ref={afterLabelsRef} className="absolute inset-0 px-6 pt-5 flex justify-between z-10" style={{ clipPath: 'inset(0 100% 0 0)' }}>
           <div />
-          <span className="text-xs uppercase tracking-widest font-bold text-brand-yellow">With Modozo</span>
+          <span className="text-xs uppercase tracking-widest font-bold text-yellow-400">With Modozo</span>
         </div>
       </div>
       <div className="px-4 flex-grow relative">
@@ -360,7 +360,7 @@ const BeforeAfterVisual = ({ started = false }) => {
           {textRow(['Scattered Tools', 'Stalled Approvals', 'Blind Spots'], 'text-white/38', 'bg-white/25')}
         </div>
         <div ref={afterTxtRef} className="absolute inset-0 flex items-center justify-center z-10" style={{ clipPath: 'inset(0 100% 0 0)' }}>
-          {textRow(['One Workspace', 'Full Visibility', 'Live Sync'], 'text-brand-yellow', 'bg-brand-yellow')}
+          {textRow(['One Workspace', 'Full Visibility', 'Live Sync'], 'text-yellow-400', 'bg-yellow-400')}
         </div>
       </div>
     </div>
@@ -415,11 +415,11 @@ const ImpactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-brand-navy text-white rounded-t-[2rem] md:rounded-t-[3.5rem] relative overflow-hidden w-full max-w-[100vw]"
+      className="min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-blue-deep text-white rounded-t-[2rem] md:rounded-t-[3.5rem] relative overflow-hidden w-full max-w-[100vw]"
     >
       {/* Background glow elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand-yellow/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-brand-yellow/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-400/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-400/5 rounded-full blur-[120px] pointer-events-none" />
 
       <motion.div 
         animate={cardControls}
@@ -467,8 +467,8 @@ const ImpactSection = () => {
           </div>
 
           {/* After Column */}
-          <div className="p-6 md:p-8 rounded-[1.5rem] bg-brand-yellow/5 border border-brand-yellow/20">
-            <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-brand-yellow mb-5">With Modozo</h3>
+          <div className="p-6 md:p-8 rounded-[1.5rem] bg-yellow-400/5 border border-yellow-400/20">
+            <h3 className="text-xs uppercase tracking-[0.2em] font-bold text-yellow-400 mb-5">With Modozo</h3>
             <ul className="space-y-4">
               {afterBullets.map((b, i) => (
                 <motion.li
@@ -478,7 +478,7 @@ const ImpactSection = () => {
                   transition={{ delay: 0.15 + i * 0.1 }}
                   className="flex items-start gap-3 text-white/80 text-sm leading-relaxed"
                 >
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-yellow flex-shrink-0" />
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />
                   {b}
                 </motion.li>
               ))}
@@ -494,14 +494,14 @@ const ImpactSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={animStarted ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] bg-white/5 border border-white/10 hover:border-brand-yellow/30 transition-colors group flex flex-col items-center text-center backdrop-blur-sm"
+              className="relative p-4 md:p-8 rounded-[1.5rem] md:rounded-[2.5rem] bg-white/10 border border-white/15 hover:border-yellow-400/30 transition-colors group flex flex-col items-center text-center backdrop-blur-sm"
             >
               <div className="w-full mb-4">
                 <item.Animation active={true} />
               </div>
               
               <div className="mb-2">
-                <span className="text-3xl md:text-5xl font-black text-brand-yellow tracking-tighter">
+                <span className="text-3xl md:text-5xl font-black text-yellow-400 tracking-tighter">
                   <AnimatedCounter value={item.value} delay={i * 0.2} />
                 </span>
                 <span className="text-lg font-bold ml-1 text-white/90">{item.suffix}</span>
@@ -517,7 +517,7 @@ const ImpactSection = () => {
                   initial={{ x: "-100%" }}
                   animate={animStarted ? { x: "0%" } : {}}
                   transition={{ duration: 1.5, delay: i * 0.2 + 0.5, ease: "easeOut" }}
-                  className="h-full bg-brand-yellow w-full"
+                  className="h-full bg-yellow-400 w-full"
                 />
               </div>
             </motion.div>

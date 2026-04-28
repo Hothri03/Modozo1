@@ -38,7 +38,7 @@ const TechpackAnim = ({ active, accentColor }) => (
         </svg>
       </motion.div>
     </div>
-    <div className="w-40 h-1.5 bg-white/8 rounded-full overflow-hidden border border-white/10">
+    <div className="w-40 h-1.5 bg-yellow-200 rounded-full overflow-hidden border border-yellow-300">
       <motion.div
         className="h-full"
         style={{ backgroundColor: accentColor }}
@@ -48,7 +48,7 @@ const TechpackAnim = ({ active, accentColor }) => (
     </div>
     <div className="flex flex-col gap-2 w-full px-8">
       {[1, 2, 3].map((i) => (
-        <div key={i} className="h-1.5 bg-white/8 rounded-full w-full relative overflow-hidden">
+        <div key={i} className="h-1.5 bg-yellow-200 rounded-full w-full relative overflow-hidden">
           <motion.div 
             className="absolute inset-0 opacity-40"
             style={{ backgroundColor: accentColor }}
@@ -69,9 +69,9 @@ const ReviewAnim = ({ active, accentColor }) => (
           key={i}
           animate={active ? { opacity: 1, scale: 1 } : { opacity: 0.4, scale: 0.8 }}
           style={{ borderColor: accentColor }}
-          className="w-10 h-10 rounded-full bg-white/8 border-2 flex items-center justify-center overflow-hidden"
+          className="w-10 h-10 rounded-full bg-yellow-100 border-2 flex items-center justify-center overflow-hidden"
         >
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="rgba(255,255,255,0.3)">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="rgba(30,58,138,0.4)">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
           </svg>
         </motion.div>
@@ -79,8 +79,8 @@ const ReviewAnim = ({ active, accentColor }) => (
     </div>
     <div className="flex flex-col gap-2 w-full px-6">
       {[0, 1].map(i => (
-        <div key={i} className="flex items-center justify-between bg-white/5 p-1.5 rounded-lg border border-white/8">
-          <div className="h-1 bg-white/15 rounded-full w-20" />
+        <div key={i} className="flex items-center justify-between bg-yellow-100 p-1.5 rounded-lg border border-yellow-200">
+          <div className="h-1 bg-yellow-300 rounded-full w-20" />
           <motion.div animate={active ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0.3 }}>
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke={accentColor} strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="20 6 9 17 4 12" />
@@ -101,16 +101,16 @@ const ReviewAnim = ({ active, accentColor }) => (
 
 const SourcingAnim = ({ active, accentColor }) => (
   <div className="relative w-full h-24 mt-2 flex items-center justify-center px-4">
-    <div className="w-full h-px bg-white/8 absolute top-1/2 left-0" />
+    <div className="w-full h-px bg-yellow-300/50 absolute top-1/2 left-0" />
     <div className="absolute left-2 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
-      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10" style={{ borderColor: `${accentColor}44` }}>
+      <div className="w-10 h-10 rounded-xl bg-yellow-100 flex items-center justify-center border border-yellow-300" style={{ borderColor: `${accentColor}44` }}>
         <svg viewBox="0 0 24 24" width="16" height="16" stroke={accentColor} strokeWidth="2" fill="none" className="opacity-80">
           <path d="M3 21h18M3 7v1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7m0 1a3 3 0 0 0 6 0V7M4 7l2-4h12l2 4" />
         </svg>
       </div>
     </div>
     <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col items-center gap-1">
-      <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10" style={{ borderColor: `${accentColor}44` }}>
+      <div className="w-10 h-10 rounded-xl bg-yellow-100 flex items-center justify-center border border-yellow-300" style={{ borderColor: `${accentColor}44` }}>
         <svg viewBox="0 0 24 24" width="16" height="16" stroke={accentColor} strokeWidth="2" fill="none" className="opacity-80">
           <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><polyline points="16 11 18 13 22 9" />
         </svg>
@@ -137,10 +137,10 @@ const VendorAnim = ({ active, accentColor }) => (
           {[1, 2].map(i => <svg key={i} viewBox="0 0 24 24" width="10" height="10" stroke={accentColor} fill="none" className="opacity-70"><polyline points="13 17 18 12 13 7" /><line x1="6" y1="12" x2="18" y2="12" /></svg>)}
         </motion.div>
       </div>
-      <div className="w-10 h-10 rounded-full bg-white/5 border-2 border-dashed flex items-center justify-center" style={{ borderColor: `${accentColor}44` }}>
+      <div className="w-10 h-10 rounded-full bg-yellow-100 border-2 border-dashed flex items-center justify-center" style={{ borderColor: `${accentColor}44` }}>
          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke={accentColor} strokeWidth="2"><path d="M21 15a2 2 0 0 1-2 2H7l4-4V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2z" /></svg>
       </div>
-      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border-2" style={{ borderColor: accentColor }}>
+      <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center border-2" style={{ borderColor: accentColor }}>
          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke={accentColor} strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
       </div>
     </div>
@@ -154,19 +154,19 @@ const VendorAnim = ({ active, accentColor }) => (
 
 const SampleAnim = ({ active, accentColor }) => (
   <div className="w-full mt-6 flex flex-col gap-5 px-4">
-    <div className="relative h-1 bg-white/10 rounded-full">
+    <div className="relative h-1 bg-yellow-200 rounded-full">
       <div className="absolute inset-0 flex justify-between items-center -top-2">
         {[0, 1, 2].map((i) => (
-          <motion.div key={i} animate={active && (i === 0 || i === 1) ? { backgroundColor: accentColor, scale: 1.1 } : { backgroundColor: "rgba(255,255,255,0.08)", scale: 1 }} className="w-4 h-4 rounded-full border-2" />
+          <motion.div key={i} animate={active && (i === 0 || i === 1) ? { backgroundColor: accentColor, scale: 1.1 } : { backgroundColor: "#FFE27A", scale: 1 }} className="w-4 h-4 rounded-full border-2" />
         ))}
       </div>
       <motion.div animate={active ? { width: "50%" } : { width: "10%" }} style={{ backgroundColor: accentColor }} className="absolute h-full rounded-full" />
     </div>
-    <div className="flex items-center justify-center gap-3 bg-white/5 py-2 rounded-xl border border-white/8">
+    <div className="flex items-center justify-center gap-3 bg-yellow-100 py-2 rounded-xl border border-yellow-200">
        <motion.div animate={active ? { x: [-2, 2, -2] } : {}} transition={{ duration: 1, repeat: Infinity }}>
-         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></svg>
+         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#1A1A1A" strokeWidth="1.5"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></svg>
        </motion.div>
-       <span className="text-[9px] font-extrabold text-white/60">DHL PKG #4829</span>
+       <span className="text-[9px] font-extrabold text-text-secondary">DHL PKG #4829</span>
     </div>
   </div>
 );
@@ -182,14 +182,14 @@ const ProductionAnim = ({ active, accentColor }) => {
   return (
     <div className="w-full mt-4 flex flex-col gap-4 px-6">
       <div className="flex items-center justify-between">
-        <motion.div animate={active ? { rotate: 360 } : {}} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} className="w-5 h-5 border-2 border-white/10 rounded-full flex items-center justify-center" style={{ borderTopColor: accentColor }} />
-        <span className="px-2 py-0.5 bg-white/10 rounded text-[7px] font-bold" style={{ color: accentColor }}>LIVE</span>
+        <motion.div animate={active ? { rotate: 360 } : {}} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} className="w-5 h-5 border-2 border-yellow-300 rounded-full flex items-center justify-center" style={{ borderTopColor: accentColor }} />
+        <span className="px-2 py-0.5 bg-blue-deep rounded text-[7px] font-bold text-white">LIVE</span>
       </div>
       <div className="flex flex-col gap-2">
         {[ { label: "Fabrication", p: 92 }, { label: "Construction", p: percent } ].map((item, i) => (
           <div key={i} className="flex flex-col gap-1">
-            <div className="flex justify-between text-[7px] font-bold text-white/50"><span>{item.label}</span><span>{item.p}%</span></div>
-            <div className="w-full h-1 bg-white/8 rounded-full overflow-hidden">
+            <div className="flex justify-between text-[7px] font-bold text-text-muted"><span>{item.label}</span><span>{item.p}%</span></div>
+            <div className="w-full h-1 bg-yellow-200 rounded-full overflow-hidden">
                <motion.div animate={active ? { width: `${item.p}%` } : { width: "10%" }} style={{ backgroundColor: accentColor, opacity: 0.7 }} className="h-full" />
             </div>
           </div>
@@ -212,17 +212,17 @@ const WorkflowCard = ({ index, x, rotation, scale, isActive }) => {
 
   return (
     <motion.div
-      style={{ x, scale, zIndex: 50 - index, background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(255,215,0,0.08)' }}
-      className="absolute flex flex-col items-center justify-start py-8 px-6 rounded-[2.5rem] border-2 shadow-2xl w-[220px] md:w-[260px] h-[400px] md:h-[460px] shrink-0"
+      style={{ x, scale, zIndex: 50 - index, background: 'white', borderColor: '#FFE27A' }}
+      className="absolute flex flex-col items-center justify-start py-8 px-6 rounded-[2.5rem] border-2 shadow-lg w-[220px] md:w-[260px] h-[400px] md:h-[460px] shrink-0"
     >
       <div className="relative z-10 flex flex-col items-center w-full">
-        <span className="font-extrabold text-[10px] uppercase tracking-[0.2em] mb-4 block text-white/30">
+        <span className="font-extrabold text-[10px] uppercase tracking-[0.2em] mb-4 block text-blue-deep/50">
           Step {index + 1}
         </span>
-        <h3 className="text-xl md:text-2xl font-extrabold text-white leading-tight mb-3 text-center tracking-tight">
+        <h3 className="text-xl md:text-2xl font-extrabold text-text-primary leading-tight mb-3 text-center tracking-tight">
           {content.title}
         </h3>
-        <p className="text-white/40 font-medium text-[11px] leading-relaxed text-center px-2">
+        <p className="text-text-muted font-medium text-[11px] leading-relaxed text-center px-2">
           {content.desc}
         </p>
 
@@ -273,7 +273,7 @@ const WorkflowSection = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[400vh]" style={{ background: '#060E1F' }}>
+    <section ref={containerRef} className="relative h-[400vh]" style={{ background: 'linear-gradient(180deg, #FFF7D6 0%, #FFEFA8 50%, #FFE27A 100%)' }}>
       <div className="sticky top-0 h-[100svh] w-full flex flex-col items-center justify-start overflow-hidden px-4 md:px-6 pt-20 md:pt-24">
         
         {/* Header */}
@@ -281,11 +281,11 @@ const WorkflowSection = () => {
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 tracking-tighter font-serif px-2"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-3 md:mb-4 tracking-tighter font-serif px-2"
           >
             A Clear Flow From Design to Production
           </motion.h2>
-          <p className="text-white/40 text-sm md:text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-text-secondary text-sm md:text-lg font-medium max-w-2xl mx-auto">
             Experience a synchronized workflow where every transition is seamless and every step is visible.
           </p>
         </div>

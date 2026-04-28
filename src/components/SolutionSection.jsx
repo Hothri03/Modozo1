@@ -97,10 +97,10 @@ const PlatformCard = () => (
 ───────────────────────────────────────────── */
 const SolutionSection = () => {
   return (
-    <section className="py-16 md:py-32 px-4 sm:px-6 bg-brand-navy text-white rounded-[2rem] md:rounded-[3rem] shadow-2xl relative overflow-hidden -mt-4 md:-mt-8 z-10 w-full max-w-[100vw]">
+    <section className="py-16 md:py-32 px-4 sm:px-6 bg-blue-deep text-white rounded-[2rem] md:rounded-[3rem] shadow-2xl relative overflow-hidden -mt-4 md:-mt-8 z-10 w-full max-w-[100vw]">
 
       {/* Soft radial background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[700px] h-[500px] md:h-[700px] bg-[#FFD700] rounded-full blur-[180px] opacity-[0.06] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[700px] h-[500px] md:h-[700px] bg-yellow-400 rounded-full blur-[180px] opacity-[0.08] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto text-center relative z-10 w-full">
 
@@ -156,7 +156,7 @@ const SolutionSection = () => {
               <div
                 className={`px-8 py-4 rounded-2xl text-base font-medium ${
                   i === 1
-                    ? 'bg-[#FFD700] text-black shadow-[0_0_20px_rgba(255,215,0,0.4)]'
+                    ? 'bg-yellow-400 text-text-primary shadow-[0_0_20px_rgba(255,216,77,0.4)]'
                     : 'bg-white/10 text-white border border-white/20'
                 }`}
               >
@@ -164,7 +164,7 @@ const SolutionSection = () => {
               </div>
               {i < 2 && (
                 <motion.div
-                  className="w-px h-8 bg-[#FFD700]"
+                  className="w-px h-8 bg-yellow-400"
                   animate={{ opacity: [0.4, 1, 0.4] }}
                   transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
                 />
