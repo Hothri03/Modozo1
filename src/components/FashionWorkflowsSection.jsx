@@ -17,7 +17,7 @@ const DesignSamplingAnimation = ({ active }) => {
   }, [active]);
 
   return (
-    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden bg-brand-bg-blue/50 rounded-2xl border border-brand-yellow/10">
+    <div className="relative w-full h-40 flex items-center justify-center overflow-hidden rounded-2xl border border-[#FFD700]/10" style={{ background: 'rgba(255,255,255,0.03)' }}>
       <div className="relative z-10 scale-110">
         {/* Garment Visual (Simplified Shirt) */}
         <motion.svg 
@@ -30,7 +30,7 @@ const DesignSamplingAnimation = ({ active }) => {
         >
           <path 
             d="M 20 20 L 35 15 L 45 20 L 55 20 L 65 15 L 80 20 L 85 45 L 75 50 L 75 85 L 25 85 L 25 50 L 15 45 Z" 
-            stroke="black" strokeWidth="2"
+            stroke="rgba(255,255,255,0.6)" strokeWidth="2"
           />
         </motion.svg>
 
@@ -42,7 +42,7 @@ const DesignSamplingAnimation = ({ active }) => {
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
-                className="absolute -top-4 -left-4 px-2 py-1 bg-white border border-brand-yellow text-[8px] rounded-full font-bold shadow-sm"
+                className="absolute -top-4 -left-4 px-2 py-1 border border-brand-yellow text-[8px] rounded-full font-bold shadow-sm text-[#FFD700]" style={{ background: 'rgba(255,215,0,0.1)' }}
               >
                 MOD: COLLAR?
               </motion.div>
@@ -51,7 +51,7 @@ const DesignSamplingAnimation = ({ active }) => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
                 transition={{ delay: 0.2 }}
-                className="absolute top-10 -right-8 px-2 py-1 bg-white border border-brand-yellow text-[8px] rounded-full font-bold shadow-sm"
+                className="absolute top-10 -right-8 px-2 py-1 border border-brand-yellow text-[8px] rounded-full font-bold shadow-sm text-[#FFD700]" style={{ background: 'rgba(255,215,0,0.1)' }}
               >
                 ADJUST LENGTH
               </motion.div>
@@ -78,16 +78,16 @@ const DesignSamplingAnimation = ({ active }) => {
             transition={{ duration: 2, ease: "linear" }}
             className="absolute bottom-4 flex items-center gap-2"
           >
-            <div className="w-6 h-6 bg-brand-yellow rounded flex items-center justify-center border border-black/10 shadow-sm">
-              <div className="w-3 h-3 border-t-2 border-l-2 border-black/20" />
+            <div className="w-6 h-6 bg-brand-yellow rounded flex items-center justify-center border border-white/10 shadow-sm">
+              <div className="w-3 h-3 border-t-2 border-l-2 border-white/30" />
             </div>
-            <span className="text-[8px] font-bold tracking-widest text-brand-navy/40 uppercase">EXPRESS TO LAB</span>
+            <span className="text-[8px] font-bold tracking-widest text-[#FFD700]/50 uppercase">EXPRESS TO LAB</span>
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className="absolute bottom-2 text-center w-full">
-        <span className="text-[8px] text-gray-400 font-bold uppercase tracking-widest">
+        <span className="text-[8px] text-white/30 font-bold uppercase tracking-widest">
           {step === 0 && "Design Ready"}
           {step === 1 && "Feedback Cycle"}
           {step === 2 && "Final Iteration"}
@@ -124,15 +124,15 @@ const BulkProductionAnimation = ({ active }) => {
   }, [active]);
 
   return (
-    <div className="relative w-full h-40 flex flex-col items-center justify-center overflow-hidden bg-brand-bg-blue/50 rounded-2xl border border-brand-yellow/10 p-6">
+    <div className="relative w-full h-40 flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-[#FFD700]/10 p-6" style={{ background: 'rgba(255,255,255,0.03)' }}>
       {/* Production Grid */}
       <div className="grid grid-cols-5 gap-2 mb-6">
         {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
             animate={{ 
-              backgroundColor: i * 10 < percent ? "#FFD700" : "rgba(255,255,255,0.5)",
-              borderColor: i * 10 < percent ? "rgba(0,0,0,0.1)" : "rgba(0,0,0,0.05)"
+              backgroundColor: i * 10 < percent ? "#FFD700" : "rgba(255,255,255,0.08)",
+              borderColor: i * 10 < percent ? "rgba(255,215,0,0.3)" : "rgba(255,255,255,0.06)"
             }}
             className="w-4 h-4 rounded-sm border"
           />
@@ -141,7 +141,7 @@ const BulkProductionAnimation = ({ active }) => {
 
       {/* Progress Bar & Alert */}
       <div className="w-full relative px-4 text-center">
-        <div className="w-full h-1.5 bg-black/5 rounded-full overflow-hidden mb-2">
+        <div className="w-full h-1.5 bg-white/8 rounded-full overflow-hidden mb-2">
           <motion.div 
             style={{ width: `${percent}%` }}
             className={`h-full transition-colors duration-300 ${hasAlert ? "bg-red-500" : "bg-brand-yellow"}`}
@@ -156,9 +156,9 @@ const BulkProductionAnimation = ({ active }) => {
                 initial={{ y: 5, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -5, opacity: 0 }}
-                className="flex items-center gap-1 text-[8px] font-bold text-red-600 uppercase tracking-widest"
+                className="flex items-center gap-1 text-[8px] font-bold text-red-400 uppercase tracking-widest"
               >
-                <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
                 Material Delay Alert
               </motion.div>
             ) : percent > 0 ? (
@@ -166,7 +166,7 @@ const BulkProductionAnimation = ({ active }) => {
                 key="status"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-[8px] font-bold text-gray-400 uppercase tracking-widest"
+                className="text-[8px] font-bold text-white/40 uppercase tracking-widest"
               >
                 Production Batch #{Math.floor(percent / 10 + 101)} • {percent}%
               </motion.div>
@@ -196,7 +196,7 @@ const FashionWorkflowsSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="py-12 md:py-16 px-4 sm:px-6 md:px-12 bg-white/20 rounded-[2rem] md:rounded-[3.5rem] mx-2 sm:mx-4 md:mx-12 my-6 md:my-8 backdrop-blur-md border border-brand-yellow/30 shadow-sm relative overflow-hidden w-auto max-w-[100vw] box-border">
+    <section className="py-12 md:py-16 px-4 sm:px-6 md:px-12 rounded-[2rem] md:rounded-[3.5rem] mx-2 sm:mx-4 md:mx-12 my-6 md:my-8 backdrop-blur-md border border-[#FFD700]/15 shadow-sm relative overflow-hidden w-auto max-w-[100vw] box-border" style={{ background: 'rgba(11,26,51,0.8)' }}>
       
       {/* Background patterns */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/5 rounded-full blur-[100px]" />
@@ -209,11 +209,11 @@ const FashionWorkflowsSection = () => {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <span className="text-gray-500 font-bold uppercase tracking-[0.3em] text-xs mb-3 block">Tailored for Industry</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5 tracking-tight text-black font-serif leading-tight">
+          <span className="text-[#FFD700]/50 font-bold uppercase tracking-[0.3em] text-xs mb-3 block">Tailored for Industry</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5 tracking-tight text-white font-serif leading-tight">
             Built Specifically for Fashion Workflows
           </h2>
-          <p className="text-base md:text-lg text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-base md:text-lg text-white/40 max-w-3xl mx-auto font-light leading-relaxed">
             Modozo understands the lifecycle of apparel. Our structured workflow simulations accommodate everything from prototype tweaks to complex bulk manufacturing shifts.
           </p>
         </motion.div>
@@ -228,23 +228,24 @@ const FashionWorkflowsSection = () => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.02, y: -5 }}
             className={`
-              p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-white border-2 transition-all duration-500 cursor-default flex flex-col h-full w-full
-              ${hoveredCard === 1 ? 'border-brand-yellow shadow-2xl' : 'border-gray-50 shadow-sm'}
+              p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-2 transition-all duration-500 cursor-default flex flex-col h-full w-full
+              ${hoveredCard === 1 ? 'border-brand-yellow shadow-2xl' : 'border-white/5 shadow-sm'}
             `}
+            style={{ background: 'rgba(255,255,255,0.04)' }}
           >
             <div className="mb-6 w-full">
               <DesignSamplingAnimation active={hoveredCard === 1 || hoveredCard === null} />
             </div>
             
             <div className="mt-auto">
-              <h3 className="text-2xl font-bold mb-3 text-brand-navy tracking-tight">Design & Sampling</h3>
-              <p className="text-gray-500 font-light leading-relaxed text-base mb-6">
+              <h3 className="text-2xl font-bold mb-3 text-white tracking-tight">Design & Sampling</h3>
+              <p className="text-white/40 font-light leading-relaxed text-base mb-6">
                 Eliminate friction between designers and makers. Manage prototype modifications in real-time, aggregate pattern feedback, and track sample movement globally.
               </p>
               
               <div className="flex flex-wrap gap-2">
                 {["Tech Packs", "Pattern Audits", "Sampling Tracking"].map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold uppercase rounded-full tracking-widest">{tag}</span>
+                  <span key={tag} className="px-3 py-1 text-[#FFD700]/50 text-[10px] font-bold uppercase rounded-full tracking-widest" style={{ background: 'rgba(255,215,0,0.06)', border: '1px solid rgba(255,215,0,0.1)' }}>{tag}</span>
                 ))}
               </div>
             </div>
@@ -259,23 +260,24 @@ const FashionWorkflowsSection = () => {
             viewport={{ once: true }}
             whileHover={{ scale: 1.02, y: -5 }}
             className={`
-              p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-white border-2 transition-all duration-500 cursor-default flex flex-col h-full w-full
-              ${hoveredCard === 2 ? 'border-brand-yellow shadow-2xl' : 'border-gray-50 shadow-sm'}
+              p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-2 transition-all duration-500 cursor-default flex flex-col h-full w-full
+              ${hoveredCard === 2 ? 'border-brand-yellow shadow-2xl' : 'border-white/5 shadow-sm'}
             `}
+            style={{ background: 'rgba(255,255,255,0.04)' }}
           >
             <div className="mb-6 w-full">
               <BulkProductionAnimation active={hoveredCard === 2 || hoveredCard === null} />
             </div>
             
             <div className="mt-auto">
-              <h3 className="text-2xl font-bold mb-3 text-brand-navy tracking-tight">Bulk Production</h3>
-              <p className="text-gray-500 font-light leading-relaxed text-base mb-6">
+              <h3 className="text-2xl font-bold mb-3 text-white tracking-tight">Bulk Production</h3>
+              <p className="text-white/40 font-light leading-relaxed text-base mb-6">
                 Real-time factory floor oversight. From PO issuance to final quality checks, identify material delays before they block your line and ensure strict compliance at every batch.
               </p>
 
               <div className="flex flex-wrap gap-2">
                 {["PO Management", "Live Progress", "Quality Compliance"].map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-500 text-[10px] font-bold uppercase rounded-full tracking-widest">{tag}</span>
+                  <span key={tag} className="px-3 py-1 text-[#FFD700]/50 text-[10px] font-bold uppercase rounded-full tracking-widest" style={{ background: 'rgba(255,215,0,0.06)', border: '1px solid rgba(255,215,0,0.1)' }}>{tag}</span>
                 ))}
               </div>
             </div>
