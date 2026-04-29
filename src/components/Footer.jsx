@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-yellow-100 text-text-primary py-16 md:py-24 border-t border-yellow-300/30">
+    <footer className="bg-yellow-100 text-text-primary pt-16 pb-6 md:pt-24 md:pb-8 border-t border-yellow-300/30">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* CONTENT COLUMNS */}
@@ -61,8 +61,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom mini-footer */}
-        <div className="mt-20 pt-8 border-t border-yellow-300/30 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-text-muted font-medium tracking-widest uppercase">
+        <div className="mt-20 pt-8 border-t border-yellow-300/30 flex justify-center items-center w-full">
+          <p className="text-xs text-text-muted font-medium tracking-widest uppercase text-center w-full">
             © {new Date().getFullYear()} Modozo — The Operating System for Fashion Supply Chains
           </p>
         </div>
