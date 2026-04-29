@@ -24,7 +24,6 @@ const Navbar = () => {
     { name: 'Home', href: '#home' },
     { name: 'Workflow Challenges', href: '#challenges' },
     { name: 'Lack of Structure', href: '#structure' },
-    { name: 'Solution', href: '#solution' },
     { name: 'Workflow', href: '#workflow' },
     { name: 'Features', href: '#features' },
     { name: 'Impact', href: '#impact' },
@@ -59,12 +58,11 @@ const Navbar = () => {
       </div>
       <div className="flex items-center gap-3">
         <div className="hidden md:flex items-center gap-3 mr-2">
-          <a href="#login" className="text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors">Login</a>
-          <a href="#signup" className="text-sm font-bold text-text-primary px-5 py-2.5 rounded-full hover:scale-105 transition-transform shadow-md active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)' }}>Sign Up</a>
+          <a href="#login" className="text-sm font-semibold text-[#666666] hover:text-black transition-colors">Login</a>
+          <a href="#signup" className="text-sm font-bold text-black bg-[#FFD700] px-5 py-2.5 rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 active:scale-95">Sign Up</a>
         </div>
         <button onClick={scrollToContact}
-          className="hidden md:block px-5 py-2.5 font-semibold text-sm rounded-full shadow-sm hover:scale-105 transition-all duration-300 active:scale-95 whitespace-nowrap border-2 border-yellow-400 text-text-primary hover:bg-yellow-100 hover:text-white">
+          className="hidden md:block px-5 py-2.5 font-semibold text-sm rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 active:scale-95 whitespace-nowrap border-2 border-black/10 bg-white/40 text-black">
           Contact Us
         </button>
         <button
@@ -94,8 +92,9 @@ const Navbar = () => {
             </a>
           ))}
           <button onClick={() => { setIsMobileMenuOpen(false); scrollToContact(); }}
-            className="mt-4 px-6 py-3 text-white font-semibold text-sm rounded-full shadow-md w-full md:hidden text-center"
-            style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)' }}>Contact Us</button>
+            className="mt-4 px-6 py-3 font-semibold text-sm rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 active:scale-95 w-full md:hidden text-center border-2 border-black/10 bg-black/5 text-black">
+            Contact Us
+          </button>
         </div>
       )}
     </nav>
@@ -185,18 +184,17 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-[#333333] leading-relaxed font-medium mb-6">
             From techpacks and approvals to vendors, samples, and production tracking — Modozo brings your entire fashion workflow into one connected system.
           </p>
-          <p className="text-base md:text-lg text-[#666666] leading-relaxed font-light mb-10">
+          {/* <p className="text-base md:text-lg text-[#666666] leading-relaxed font-light mb-10">
             Built for fashion brands that want to move faster, stay aligned, and launch collections without operational chaos.
-          </p>
+          </p> */}
         </motion.div>
 
         <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-          <button className="px-8 py-4 text-text-primary rounded-full shadow-lg font-bold hover:scale-105 transition-all duration-300 active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)', boxShadow: '0 4px 20px rgba(26,26,26,0.3)' }}>
+          <button className="px-8 py-4 bg-[#FFD700] text-black rounded-full shadow-lg font-bold hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
             Book a Demo
           </button>
-          <button className="px-8 py-4 text-text-primary rounded-full font-bold hover:scale-105 transition-all duration-300 active:scale-95 border-2 border-yellow-400 hover:bg-yellow-100 hover:text-white">
+          <button className="px-8 py-4 bg-white/40 backdrop-blur-sm text-black border-2 border-black/10 rounded-full font-bold hover:scale-105 hover:shadow-lg transition-all duration-300 active:scale-95">
             See How It Works
           </button>
         </motion.div>
