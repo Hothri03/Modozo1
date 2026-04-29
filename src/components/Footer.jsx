@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-deep text-white py-16 md:py-24 border-t border-white/10">
+    <footer className="bg-yellow-100 text-text-primary py-16 md:py-24 border-t border-yellow-300/30">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* CONTENT COLUMNS */}
@@ -14,7 +14,7 @@ const Footer = () => {
               MODOZO
             </h3>
             
-            <div className="flex flex-col gap-4 text-gray-400 font-light tracking-wide">
+            <div className="flex flex-col gap-4 text-text-secondary font-light tracking-wide">
               <p className="leading-relaxed max-w-xs">
                 Shaikpet, Telangana,<br />
                 India, 500081
@@ -35,11 +35,11 @@ const Footer = () => {
 
           {/* RIGHT SIDE: Links (Repositioned closer) */}
           <div className="flex flex-col items-start text-left">
-            <h4 className="text-lg font-semibold text-white/90 mb-6 tracking-tight">
+            <h4 className="text-lg font-semibold text-text-primary/90 mb-6 tracking-tight">
               Do you know us?
             </h4>
             
-            <div className="flex flex-col gap-4 text-gray-400">
+            <div className="flex flex-col gap-4 text-text-secondary">
               <a 
                 href="#about" 
                 className="text-base font-normal hover:text-yellow-400 hover:underline underline-offset-8 decoration-1 transition-all duration-300"
@@ -61,8 +61,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom mini-footer */}
-        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-gray-500 font-medium tracking-widest uppercase">
+        <div className="mt-20 pt-8 border-t border-yellow-300/30 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-text-muted font-medium tracking-widest uppercase">
             © {new Date().getFullYear()} Modozo — The Operating System for Fashion Supply Chains
           </p>
         </div>

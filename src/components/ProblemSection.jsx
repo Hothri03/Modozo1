@@ -88,7 +88,7 @@ const HiddenFrictionVisual = ({ scrollYProgress }) => {
               x1="3%" y1="50%" x2="97%" y2="50%"
               strokeWidth="3"
               strokeLinecap="round"
-              stroke="#1E3A8A"
+              stroke="#1A1A1A"
               animate={{
                 pathLength: [0, 0.25, 0.25, 0.25, 0.25, 0],
                 // Brief pause in flow at 40% to communicate interruption
@@ -156,9 +156,9 @@ const HiddenFrictionVisual = ({ scrollYProgress }) => {
               <span className="text-[10px] sm:text-xs font-semibold text-text-primary whitespace-nowrap">{block.label}</span>
               
               {/* HOVER INTERACTION: Expansion Info Box */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[130px] text-white text-[9px] sm:text-[10px] py-2 px-3 rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none z-50 text-center shadow-lg" style={{ background: '#1E3A8A' }}>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[130px] text-white text-[9px] sm:text-[10px] py-2 px-3 rounded-md opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none z-50 text-center shadow-lg" style={{ background: '#1A1A1A' }}>
                 <span className="leading-snug">{block.info}</span>
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 border-x-[5px] border-x-transparent border-b-[6px] border-b-[#1E3A8A]"></div>
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 border-x-[5px] border-x-transparent border-b-[6px] border-b-[#1A1A1A]"></div>
               </div>
             </motion.div>
           </motion.div>
@@ -197,7 +197,7 @@ const ProblemSection = () => {
       {/* Subtle Background Grid */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
-          backgroundImage: "repeating-linear-gradient(45deg, #1E3A8A 0, #1E3A8A 1px, transparent 0, transparent 50%)",
+          backgroundImage: "repeating-linear-gradient(45deg, #1A1A1A 0, #1A1A1A 1px, transparent 0, transparent 50%)",
           backgroundSize: "12px 12px"
         }}
       />
@@ -246,8 +246,8 @@ const ProblemSection = () => {
                 }}
                 className="flex items-start gap-4 text-left"
               >
-                <div className="mt-[6px] flex-shrink-0 w-4 h-4 rounded-full border-2 border-blue-deep/30 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-deep/50" />
+                <div className="mt-[6px] flex-shrink-0 w-4 h-4 rounded-full border-2 border-yellow-400/30 flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 rounded-full bg-yellow-100/50" />
                 </div>
                 <span className="text-text-secondary font-medium text-base md:text-lg">{text}</span>
               </motion.li>

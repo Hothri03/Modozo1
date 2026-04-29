@@ -60,7 +60,7 @@ const ApprovalsAnimation = ({ active }) => (
           delay: i * 0.4,
           times: [0, 0.2, 0.8, 1]
         }}
-        className="absolute w-8 h-10 bg-white/10 border border-white/20 rounded-md flex items-center justify-center"
+        className="absolute w-8 h-10 bg-white/10 border border-yellow-300/30 rounded-md flex items-center justify-center"
       >
         <div className="w-4 h-1 bg-white/20 rounded-full" />
       </motion.div>
@@ -336,7 +336,7 @@ const BeforeAfterVisual = ({ started = false }) => {
   );
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto mb-10 md:mb-16 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-white/10 border border-white/20 bg-blue-deep shadow-inner flex flex-col">
+    <div className="relative w-full max-w-3xl mx-auto mb-10 md:mb-16 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden bg-white/10 border border-yellow-300/30 bg-yellow-100 shadow-inner flex flex-col">
       <div 
         ref={wipeLineRef} 
         className="absolute inset-y-0 pointer-events-none z-30" 
@@ -357,7 +357,7 @@ const BeforeAfterVisual = ({ started = false }) => {
       </div>
       <div className="relative px-6 py-5 flex-shrink-0 overflow-hidden" style={{ height: '72px' }}>
         <div ref={beforeTxtRef} className="absolute inset-0 flex items-center justify-center">
-          {textRow(['Scattered Tools', 'Stalled Approvals', 'Blind Spots'], 'text-white/38', 'bg-white/25')}
+          {textRow(['Scattered Tools', 'Stalled Approvals', 'Blind Spots'], 'text-text-primary/38', 'bg-white/25')}
         </div>
         <div ref={afterTxtRef} className="absolute inset-0 flex items-center justify-center z-10" style={{ clipPath: 'inset(0 100% 0 0)' }}>
           {textRow(['One Workspace', 'Full Visibility', 'Live Sync'], 'text-yellow-400', 'bg-yellow-400')}
@@ -415,7 +415,7 @@ const ImpactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-blue-deep text-white rounded-t-[2rem] md:rounded-t-[3.5rem] relative overflow-hidden w-full max-w-[100vw]"
+      className="min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-yellow-100 text-text-primary rounded-t-[2rem] md:rounded-t-[3.5rem] relative overflow-hidden w-full max-w-[100vw]"
     >
       {/* Background glow elements */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-400/10 rounded-full blur-[120px] pointer-events-none" />
@@ -429,7 +429,7 @@ const ImpactSection = () => {
       >
         {/* ── SECTION HEADER ── */}
         <div className="text-center mb-10 md:mb-16 lg:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight font-serif text-white px-2">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight font-serif text-text-primary px-2">
             Your Supply Chain, Before and After
           </h2>
           <p className="text-gray-400 text-sm md:text-xl font-light max-w-2xl mx-auto px-2">
@@ -457,7 +457,7 @@ const ImpactSection = () => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={animStarted ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.1 + i * 0.1 }}
-                  className="flex items-start gap-3 text-white/50 text-sm leading-relaxed"
+                  className="flex items-start gap-3 text-text-primary/50 text-sm leading-relaxed"
                 >
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-white/25 flex-shrink-0" />
                   {b}
@@ -476,7 +476,7 @@ const ImpactSection = () => {
                   initial={{ opacity: 0, x: 10 }}
                   animate={animStarted ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.15 + i * 0.1 }}
-                  className="flex items-start gap-3 text-white/80 text-sm leading-relaxed"
+                  className="flex items-start gap-3 text-text-primary/80 text-sm leading-relaxed"
                 >
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />
                   {b}
@@ -504,10 +504,10 @@ const ImpactSection = () => {
                 <span className="text-3xl md:text-5xl font-black text-yellow-400 tracking-tighter">
                   <AnimatedCounter value={item.value} delay={i * 0.2} />
                 </span>
-                <span className="text-lg font-bold ml-1 text-white/90">{item.suffix}</span>
+                <span className="text-lg font-bold ml-1 text-text-primary/90">{item.suffix}</span>
               </div>
               
-              <p className="text-xs md:text-sm font-semibold text-white/60 uppercase tracking-widest">
+              <p className="text-xs md:text-sm font-semibold text-text-primary/60 uppercase tracking-widest">
                 {item.title}
               </p>
 
@@ -531,10 +531,10 @@ const ImpactSection = () => {
           transition={{ delay: 1 }}
           className="mt-20 md:mt-24 text-center border-t border-white/10 pt-16"
         >
-          <p className="text-xl md:text-3xl font-light italic text-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-3xl font-light italic text-text-primary/80 max-w-3xl mx-auto leading-relaxed">
             "We stopped asking 'where are we on this?' — every sample, every approval, every vendor update is just there. Launches went from stressful to predictable."
           </p>
-          <p className="mt-6 text-sm text-white/40 font-medium tracking-wide">
+          <p className="mt-6 text-sm text-text-primary/40 font-medium tracking-wide">
             — Head of Sourcing, mid-size apparel brand
           </p>
         </motion.div>

@@ -104,7 +104,7 @@ const VisibilityAnimation = ({ active }) => (
           initial={{ width: "20%" }}
           animate={active ? { width: `${w}%` } : { width: "30%" }}
           transition={{ duration: active ? 1 : 2, delay: i * 0.1, ease: "easeInOut" }}
-          className="h-full bg-blue-deep"
+          className="h-full bg-yellow-100"
         />
       </div>
     ))}
@@ -174,7 +174,7 @@ const CollaborationAnimation = ({ active }) => {
         {outerNodes.map((pos, i) => (
           <motion.div
             key={i}
-            className="absolute -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-yellow-100 rounded-full z-10 border-2 border-blue-deep flex items-center justify-center shadow-sm"
+            className="absolute -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-yellow-100 rounded-full z-10 border-2 border-yellow-400 flex items-center justify-center shadow-sm"
             style={{ left: pos.x, top: pos.y }}
           />
         ))}
@@ -197,7 +197,7 @@ const ControlAnimation = ({ active }) => (
           key={i}
           animate={{ x: ["-100%", "100%"] }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear", delay: i * 0.6 }}
-          className="absolute h-full w-[10px] bg-blue-deep blur-[2px]"
+          className="absolute h-full w-[10px] bg-yellow-100 blur-[2px]"
         />
       ))}
     </div>
@@ -250,7 +250,7 @@ const FeatureStrip = ({ feature, index }) => {
         flex items-center w-full px-6 md:px-10 h-[90px] md:h-[105px]
         rounded-[20px] shadow-[0_4px_16px_rgba(0,0,0,0.05)]
         group cursor-default transition-all duration-400 border border-transparent
-        ${isHovered ? 'shadow-[0_12px_24px_rgba(0,0,0,0.08)] border-blue-deep/30' : ''}
+        ${isHovered ? 'shadow-[0_12px_24px_rgba(0,0,0,0.08)] border-yellow-400/30' : ''}
         ${isEven ? 'flex-row' : 'flex-row-reverse'}
       `}
       style={{ background: 'white' }}

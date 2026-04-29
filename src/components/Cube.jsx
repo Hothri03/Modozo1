@@ -10,7 +10,7 @@ const Cube = ({ index, title, desc }) => {
       style={{ perspective: 1000 }}
       className="flex flex-col items-center justify-center p-6 bg-white backdrop-blur-md rounded-[2rem] border border-yellow-300 shadow-[0_10px_40px_rgba(0,0,0,0.06)] relative overflow-hidden w-[250px] h-[250px] shrink-0 snap-center"
     >
-      <span className="text-blue-deep font-extrabold text-sm uppercase tracking-wider mb-3 relative z-10">Step {index + 1}</span>
+      <span className="text-text-primary font-extrabold text-sm uppercase tracking-wider mb-3 relative z-10">Step {index + 1}</span>
       <h3 className="text-xl font-extrabold text-text-primary leading-tight text-center mb-3 relative z-10">{title}</h3>
       <p className="text-sm font-semibold text-text-muted text-center leading-relaxed relative z-10">{desc}</p>
     </motion.div>

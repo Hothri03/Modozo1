@@ -55,21 +55,21 @@ const Navbar = () => {
       <div className="hidden xl:flex items-center gap-7 ml-4">
         {navLinks.map((link) => (
           <a key={link.name} href={link.href}
-            className="text-sm font-medium text-text-secondary hover:text-blue-deep transition-all duration-300">{link.name}</a>
+            className="text-sm font-medium text-text-secondary hover:text-text-primary transition-all duration-300">{link.name}</a>
         ))}
       </div>
       <div className="flex items-center gap-3">
         <div className="hidden md:flex items-center gap-3 mr-2">
-          <a href="#login" className="text-sm font-semibold text-text-secondary hover:text-blue-deep transition-colors">Login</a>
-          <a href="#signup" className="text-sm font-bold text-white px-5 py-2.5 rounded-full hover:scale-105 transition-transform shadow-md active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #1E3A8A, #2C5EDC)' }}>Sign Up</a>
+          <a href="#login" className="text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors">Login</a>
+          <a href="#signup" className="text-sm font-bold text-text-primary px-5 py-2.5 rounded-full hover:scale-105 transition-transform shadow-md active:scale-95"
+            style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)' }}>Sign Up</a>
         </div>
         <button onClick={scrollToContact}
-          className="hidden md:block px-5 py-2.5 font-semibold text-sm rounded-full shadow-sm hover:scale-105 transition-all duration-300 active:scale-95 whitespace-nowrap border-2 border-blue-deep text-blue-deep hover:bg-blue-deep hover:text-white">
+          className="hidden md:block px-5 py-2.5 font-semibold text-sm rounded-full shadow-sm hover:scale-105 transition-all duration-300 active:scale-95 whitespace-nowrap border-2 border-yellow-400 text-text-primary hover:bg-yellow-100 hover:text-white">
           Contact Us
         </button>
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="xl:hidden flex items-center justify-center p-2 text-text-primary hover:text-blue-deep focus:outline-none">
+          className="xl:hidden flex items-center justify-center p-2 text-text-primary hover:text-text-primary focus:outline-none">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isMobileMenuOpen
               ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -82,11 +82,11 @@ const Navbar = () => {
           style={{ background: 'rgba(255,247,214,0.97)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(244,196,48,0.15)' }}>
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} onClick={() => setIsMobileMenuOpen(false)}
-              className="py-3 text-sm font-medium text-text-secondary border-b border-yellow-300/20 last:border-none hover:text-blue-deep transition-all">{link.name}</a>
+              className="py-3 text-sm font-medium text-text-secondary border-b border-yellow-300/20 last:border-none hover:text-text-primary transition-all">{link.name}</a>
           ))}
           <button onClick={() => { setIsMobileMenuOpen(false); scrollToContact(); }}
             className="mt-4 px-6 py-3 text-white font-semibold text-sm rounded-full shadow-md w-full md:hidden text-center"
-            style={{ background: 'linear-gradient(135deg, #1E3A8A, #2C5EDC)' }}>Contact Us</button>
+            style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)' }}>Contact Us</button>
         </div>
       )}
     </nav>
@@ -100,7 +100,7 @@ const Arrow = ({ delay }) => (
     transition={{ duration: 0.6, delay, ease: "easeOut" }}
     className="flex items-center justify-center translate-y-[-10px]"
   >
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#1E3A8A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity="0.35">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#1A1A1A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" opacity="0.35">
       <polyline points="9 18 15 12 9 6" />
     </svg>
   </motion.div>
@@ -129,7 +129,7 @@ const WorkflowItem = ({ src, label, idx, phase, isMobile }) => {
       <div className="flex flex-col items-center gap-2">
         <img src={src} alt={label} className="w-full h-auto object-contain drop-shadow-md" />
         <motion.span animate={{ opacity: labelOpacity }}
-          className="text-[10px] md:text-[11px] font-bold text-blue-deep/50 uppercase tracking-widest text-center whitespace-nowrap">
+          className="text-[10px] md:text-[11px] font-bold text-text-primary/50 uppercase tracking-widest text-center whitespace-nowrap">
           {label}
         </motion.span>
       </div>
@@ -180,7 +180,7 @@ const HeroSection = () => {
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8 }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight text-text-primary leading-[1.1] mb-6 font-serif">
               Supercharge Your Fashion Supply Chain with{' '}
-              <span style={{ background: 'linear-gradient(135deg, #1E3A8A, #2C5EDC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Modozo</span>
+              <span style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Modozo</span>
             </h1>
             <p className="text-lg md:text-xl text-text-secondary leading-relaxed font-medium mb-4 max-w-xl mx-auto lg:mx-0">
               From techpacks and approvals to vendors, samples, and production tracking — Modozo brings your entire fashion workflow into one connected system.
@@ -192,11 +192,11 @@ const HeroSection = () => {
 
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <button className="px-8 py-4 text-white rounded-full shadow-lg font-bold hover:scale-105 transition-all duration-300 active:scale-95"
-              style={{ background: 'linear-gradient(135deg, #1E3A8A, #2C5EDC)', boxShadow: '0 4px 20px rgba(30,58,138,0.3)' }}>
+            <button className="px-8 py-4 text-text-primary rounded-full shadow-lg font-bold hover:scale-105 transition-all duration-300 active:scale-95"
+              style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)', boxShadow: '0 4px 20px rgba(26,26,26,0.3)' }}>
               Book a Demo
             </button>
-            <button className="px-8 py-4 text-blue-deep rounded-full font-bold hover:scale-105 transition-all duration-300 active:scale-95 border-2 border-blue-deep hover:bg-blue-deep hover:text-white">
+            <button className="px-8 py-4 text-text-primary rounded-full font-bold hover:scale-105 transition-all duration-300 active:scale-95 border-2 border-yellow-400 hover:bg-yellow-100 hover:text-white">
               See How It Works
             </button>
           </motion.div>
@@ -214,7 +214,7 @@ const HeroSection = () => {
                     className="absolute origin-left"
                     style={{ left: '50%', top: '50%', height: '2px', width: width - 180,
                       transform: `rotate(${angle}rad) translateX(120px)`,
-                      background: 'linear-gradient(to right, transparent 0%, rgba(30,58,138,0.12) 20%, rgba(30,58,138,0.12) 80%, transparent 100%)' }} />
+                      background: 'linear-gradient(to right, transparent 0%, rgba(26,26,26,0.12) 20%, rgba(26,26,26,0.12) 80%, transparent 100%)' }} />
                 );
               })}
             </AnimatePresence>

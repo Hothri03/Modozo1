@@ -2,7 +2,6 @@ import React from 'react';
 import HeroSection from './components/HeroSection';
 import ProblemSection from './components/ProblemSection';
 import BreakdownSection from './components/BreakdownSection';
-import SolutionSection from './components/SolutionSection';
 import WorkflowSection from './components/WorkflowSection';
 import FeaturesSection from './components/FeaturesSection';
 import StakeholdersSection from './components/StakeholdersSection';
@@ -16,7 +15,6 @@ function App() {
       <div id="home"><HeroSection /></div>
       <div id="challenges"><ProblemSection /></div>
       <div id="structure"><BreakdownSection /></div>
-      <div id="solution"><SolutionSection /></div>
       <div id="workflow"><WorkflowSection /></div>
       <div id="features"><FeaturesSection /></div>
       <StakeholdersSection />

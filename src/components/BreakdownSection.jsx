@@ -131,8 +131,8 @@ const ScatteredCommAnimation = () => {
         {/* Render Users */}
         {NODES.map((n) => (
           <g key={`node-${n.id}`} transform={`translate(${n.x}, ${n.y})`}>
-            <circle cx="0" cy="-6" r="8" fill="#1E3A8A" />
-            <path d="M-14 14 C-14 2, 14 2, 14 14" stroke="#1E3A8A" strokeWidth="3" strokeLinecap="round" fill="none" />
+            <circle cx="0" cy="-6" r="8" fill="#1A1A1A" />
+            <path d="M-14 14 C-14 2, 14 2, 14 14" stroke="#1A1A1A" strokeWidth="3" strokeLinecap="round" fill="none" />
           </g>
         ))}
 
@@ -274,9 +274,9 @@ const VisibilityAnimation = () => {
                className={`rounded-lg border p-1.5 flex flex-col gap-[3px] relative overflow-hidden justify-center ${yOffset}`}
              >
                 {/* Data blocks mimicking lines of text */}
-                 <div className={`h-[3px] rounded-full transition-colors duration-1000 w-3/4 ${isActive || isReset ? (isActive ? 'bg-blue-deep' : 'bg-yellow-300') : 'bg-yellow-200'}`} />
-                 <div className={`h-[3px] rounded-full transition-colors duration-1000 w-full ${isActive || isReset ? (isActive ? 'bg-blue-deep/50' : 'bg-yellow-300') : 'bg-yellow-200'}`} />
-                 <div className={`h-[3px] rounded-full transition-colors duration-1000 w-1/2 ${isActive || isReset ? (isActive ? 'bg-blue-deep/50' : 'bg-yellow-300') : 'bg-yellow-200'}`} />
+                 <div className={`h-[3px] rounded-full transition-colors duration-1000 w-3/4 ${isActive || isReset ? (isActive ? 'bg-yellow-100' : 'bg-yellow-300') : 'bg-yellow-200'}`} />
+                 <div className={`h-[3px] rounded-full transition-colors duration-1000 w-full ${isActive || isReset ? (isActive ? 'bg-yellow-100/50' : 'bg-yellow-300') : 'bg-yellow-200'}`} />
+                 <div className={`h-[3px] rounded-full transition-colors duration-1000 w-1/2 ${isActive || isReset ? (isActive ? 'bg-yellow-100/50' : 'bg-yellow-300') : 'bg-yellow-200'}`} />
              </motion.div>
            );
          })}
@@ -342,9 +342,9 @@ const ProblemCard = ({ card, isHovered, onHover, onLeave }) => {
         layout
         animate={{
           boxShadow: isHovered
-            ? '0 8px 40px rgba(30,58,138,0.12), 0 2px 12px rgba(0,0,0,0.06)'
+            ? '0 8px 40px rgba(26,26,26,0.12), 0 2px 12px rgba(0,0,0,0.06)'
             : '0 2px 12px rgba(0,0,0,0.04)',
-          borderColor: isHovered ? '#1E3A8A' : '#FFE27A',
+          borderColor: isHovered ? '#1A1A1A' : '#FFE27A',
           y: isHovered ? -4 : 0,
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
@@ -358,7 +358,7 @@ const ProblemCard = ({ card, isHovered, onHover, onLeave }) => {
 
         {/* Yellow accent line */}
         <motion.div
-          className="absolute bottom-0 left-6 right-6 h-[3px] rounded-full bg-blue-deep origin-left"
+          className="absolute bottom-0 left-6 right-6 h-[3px] rounded-full bg-yellow-100 origin-left"
           animate={{ scaleX: isHovered ? 1 : 0 }}
           transition={{ duration: 0.35, ease: 'easeInOut' }}
         />
@@ -388,11 +388,11 @@ const ProblemCard = ({ card, isHovered, onHover, onLeave }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.97 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
-            className="border-2 border-blue-deep rounded-2xl px-6 py-5 shadow-[0_6px_32px_rgba(30,58,138,0.1)] relative z-20 bg-blue-pale"
+            className="border-2 border-yellow-400 rounded-2xl px-6 py-5 shadow-[0_6px_32px_rgba(26,26,26,0.1)] relative z-20 bg-yellow-50"
           >
             {/* Arrow tip */}
             <div
-              className="absolute -top-[9px] left-1/2 -translate-x-1/2 w-4 h-4 bg-blue-pale border-l-2 border-t-2 border-blue-deep rotate-45"
+              className="absolute -top-[9px] left-1/2 -translate-x-1/2 w-4 h-4 bg-yellow-50 border-l-2 border-t-2 border-yellow-400 rotate-45"
               style={{ borderRadius: '2px 0 0 0' }}
             />
 
@@ -406,7 +406,7 @@ const ProblemCard = ({ card, isHovered, onHover, onLeave }) => {
                   transition={{ delay: 0.05 + i * 0.07, duration: 0.3, ease: 'easeOut' }}
                   className="flex items-start gap-2 text-sm text-text-secondary"
                 >
-                  <span className="mt-0.5 text-blue-deep text-xs">▸</span>
+                  <span className="mt-0.5 text-text-primary text-xs">▸</span>
                   {point}
                 </motion.li>
               ))}

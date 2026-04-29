@@ -78,10 +78,10 @@ const DesignSamplingAnimation = ({ active }) => {
             transition={{ duration: 2, ease: "linear" }}
             className="absolute bottom-4 flex items-center gap-2"
           >
-            <div className="w-6 h-6 bg-blue-deep rounded flex items-center justify-center border border-blue-deep/20 shadow-sm">
+            <div className="w-6 h-6 bg-yellow-100 rounded flex items-center justify-center border border-yellow-400/20 shadow-sm">
               <div className="w-3 h-3 border-t-2 border-l-2 border-white/50" />
             </div>
-            <span className="text-[8px] font-bold tracking-widest text-blue-deep/50 uppercase">EXPRESS TO LAB</span>
+            <span className="text-[8px] font-bold tracking-widest text-text-primary/50 uppercase">EXPRESS TO LAB</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -131,8 +131,8 @@ const BulkProductionAnimation = ({ active }) => {
           <motion.div
             key={i}
             animate={{ 
-              backgroundColor: i * 10 < percent ? "#1E3A8A" : "#FFE27A",
-              borderColor: i * 10 < percent ? "rgba(30,58,138,0.3)" : "#FFE27A"
+              backgroundColor: i * 10 < percent ? "#1A1A1A" : "#FFE27A",
+              borderColor: i * 10 < percent ? "rgba(26,26,26,0.3)" : "#FFE27A"
             }}
             className="w-4 h-4 rounded-sm border"
           />
@@ -199,8 +199,8 @@ const FashionWorkflowsSection = () => {
     <section className="py-12 md:py-16 px-4 sm:px-6 md:px-12 rounded-[2rem] md:rounded-[3.5rem] mx-2 sm:mx-4 md:mx-12 my-6 md:my-8 border border-yellow-300 shadow-sm relative overflow-hidden w-auto max-w-[100vw] box-border" style={{ background: '#FFEFA8' }}>
       
       {/* Background patterns */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-deep/5 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-deep/5 rounded-full blur-[100px]" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-100/5 rounded-full blur-[100px]" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-yellow-100/5 rounded-full blur-[100px]" />
 
       <div className="max-w-[1400px] mx-auto text-center relative z-10 w-full px-2">
         <motion.div
@@ -209,7 +209,7 @@ const FashionWorkflowsSection = () => {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <span className="text-blue-deep/50 font-bold uppercase tracking-[0.3em] text-xs mb-3 block">Tailored for Industry</span>
+          <span className="text-text-primary/50 font-bold uppercase tracking-[0.3em] text-xs mb-3 block">Tailored for Industry</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5 tracking-tight text-text-primary font-serif leading-tight">
             Built Specifically for Fashion Workflows
           </h2>
@@ -229,7 +229,7 @@ const FashionWorkflowsSection = () => {
             whileHover={{ scale: 1.02, y: -5 }}
             className={`
               p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-2 transition-all duration-500 cursor-default flex flex-col h-full w-full
-              ${hoveredCard === 1 ? 'border-blue-deep shadow-2xl' : 'border-yellow-300 shadow-sm'}
+              ${hoveredCard === 1 ? 'border-yellow-400 shadow-2xl' : 'border-yellow-300 shadow-sm'}
             `}
             style={{ background: 'white' }}
           >
@@ -245,7 +245,7 @@ const FashionWorkflowsSection = () => {
               
               <div className="flex flex-wrap gap-2">
                 {["Tech Packs", "Pattern Audits", "Sampling Tracking"].map(tag => (
-                  <span key={tag} className="px-3 py-1 text-blue-deep/60 text-[10px] font-bold uppercase rounded-full tracking-widest" style={{ background: 'rgba(30,58,138,0.06)', border: '1px solid rgba(30,58,138,0.12)' }}>{tag}</span>
+                  <span key={tag} className="px-3 py-1 text-text-primary/60 text-[10px] font-bold uppercase rounded-full tracking-widest" style={{ background: 'rgba(26,26,26,0.06)', border: '1px solid rgba(26,26,26,0.12)' }}>{tag}</span>
                 ))}
               </div>
             </div>
@@ -261,7 +261,7 @@ const FashionWorkflowsSection = () => {
             whileHover={{ scale: 1.02, y: -5 }}
             className={`
               p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] border-2 transition-all duration-500 cursor-default flex flex-col h-full w-full
-              ${hoveredCard === 2 ? 'border-blue-deep shadow-2xl' : 'border-yellow-300 shadow-sm'}
+              ${hoveredCard === 2 ? 'border-yellow-400 shadow-2xl' : 'border-yellow-300 shadow-sm'}
             `}
             style={{ background: 'white' }}
           >
@@ -277,7 +277,7 @@ const FashionWorkflowsSection = () => {
 
               <div className="flex flex-wrap gap-2">
                 {["PO Management", "Live Progress", "Quality Compliance"].map(tag => (
-                  <span key={tag} className="px-3 py-1 text-blue-deep/60 text-[10px] font-bold uppercase rounded-full tracking-widest" style={{ background: 'rgba(30,58,138,0.06)', border: '1px solid rgba(30,58,138,0.12)' }}>{tag}</span>
+                  <span key={tag} className="px-3 py-1 text-text-primary/60 text-[10px] font-bold uppercase rounded-full tracking-widest" style={{ background: 'rgba(26,26,26,0.06)', border: '1px solid rgba(26,26,26,0.12)' }}>{tag}</span>
                 ))}
               </div>
             </div>

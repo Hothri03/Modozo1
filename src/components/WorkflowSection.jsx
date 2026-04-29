@@ -71,7 +71,7 @@ const ReviewAnim = ({ active, accentColor }) => (
           style={{ borderColor: accentColor }}
           className="w-10 h-10 rounded-full bg-yellow-100 border-2 flex items-center justify-center overflow-hidden"
         >
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="rgba(30,58,138,0.4)">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="rgba(26,26,26,0.4)">
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
           </svg>
         </motion.div>
@@ -183,7 +183,7 @@ const ProductionAnim = ({ active, accentColor }) => {
     <div className="w-full mt-4 flex flex-col gap-4 px-6">
       <div className="flex items-center justify-between">
         <motion.div animate={active ? { rotate: 360 } : {}} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} className="w-5 h-5 border-2 border-yellow-300 rounded-full flex items-center justify-center" style={{ borderTopColor: accentColor }} />
-        <span className="px-2 py-0.5 bg-blue-deep rounded text-[7px] font-bold text-white">LIVE</span>
+        <span className="px-2 py-0.5 bg-yellow-100 rounded text-[7px] font-bold text-white">LIVE</span>
       </div>
       <div className="flex flex-col gap-2">
         {[ { label: "Fabrication", p: 92 }, { label: "Construction", p: percent } ].map((item, i) => (
@@ -216,7 +216,7 @@ const WorkflowCard = ({ index, x, rotation, scale, isActive }) => {
       className="absolute flex flex-col items-center justify-start py-8 px-6 rounded-[2.5rem] border-2 shadow-lg w-[220px] md:w-[260px] h-[400px] md:h-[460px] shrink-0"
     >
       <div className="relative z-10 flex flex-col items-center w-full">
-        <span className="font-extrabold text-[10px] uppercase tracking-[0.2em] mb-4 block text-blue-deep/50">
+        <span className="font-extrabold text-[10px] uppercase tracking-[0.2em] mb-4 block text-text-primary/50">
           Step {index + 1}
         </span>
         <h3 className="text-xl md:text-2xl font-extrabold text-text-primary leading-tight mb-3 text-center tracking-tight">

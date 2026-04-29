@@ -10,11 +10,11 @@
   --color-yellow-400: #FFD84D;
   --color-yellow-500: #F4C430;
 
-  /* Blue System (Accent) */
-  --color-blue-deep: #1E3A8A;
-  --color-blue-mid: #2C5EDC;
-  --color-blue-light: #4A7BFF;
-  --color-blue-pale: #EBF0FF;
+  /* Accent System (Previously Blue) */
+  --color-blue-deep: #1A1A1A;
+  --color-blue-mid: #F4C430;
+  --color-blue-light: #FFD84D;
+  --color-blue-pale: #FFF7D6;
 
   /* Text System */
   --color-text-primary: #1A1A1A;
@@ -23,7 +23,7 @@
 
   /* Brand aliases */
   --color-brand-yellow: #FFD84D;
-  --color-brand-navy: #1E3A8A;
+  --color-brand-navy: #1A1A1A;
 
   --font-sans: 'Outfit', system-ui, sans-serif;
   --font-serif: 'Cormorant Garamond', serif;
@@ -34,7 +34,7 @@
     background: linear-gradient(135deg, #FFF7D6, #FFEFA8, #FFE27A);
   }
   .text-brand-gradient {
-    background: linear-gradient(135deg, #1E3A8A, #2C5EDC);
+    background: linear-gradient(135deg, #1A1A1A, #4A5568);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
