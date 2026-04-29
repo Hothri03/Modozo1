@@ -62,10 +62,10 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-3 mr-2">
           <a href="#login" className="text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors">Login</a>
           <a href="#signup" className="text-sm font-bold text-text-primary px-5 py-2.5 rounded-full hover:scale-105 transition-transform shadow-md active:scale-95"
-            style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)' }}>Sign Up</a>
+            style={{ background: 'linear-gradient(135deg, #555555, #F4C430)' }}>Sign Up</a>
         </div>
         <button onClick={scrollToContact}
-          className="hidden md:block px-5 py-2.5 font-semibold text-sm rounded-full shadow-sm hover:scale-105 transition-all duration-300 active:scale-95 whitespace-nowrap border-2 border-yellow-400 text-text-primary hover:bg-yellow-100 hover:text-white">
+          className="hidden md:block px-5 py-2.5 font-semibold text-sm rounded-full shadow-sm hover:scale-105 transition-all duration-300 active:scale-95 whitespace-nowrap border-2 border-yellow-400 text-text-primary">
           Contact Us
         </button>
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -86,7 +86,7 @@ const Navbar = () => {
           ))}
           <button onClick={() => { setIsMobileMenuOpen(false); scrollToContact(); }}
             className="mt-4 px-6 py-3 text-white font-semibold text-sm rounded-full shadow-md w-full md:hidden text-center"
-            style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)' }}>Contact Us</button>
+            style={{ background: 'linear-gradient(135deg, #555555, #F4C430)' }}>Contact Us</button>
         </div>
       )}
     </nav>
@@ -193,10 +193,10 @@ const HeroSection = () => {
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <button className="px-8 py-4 text-text-primary rounded-full shadow-lg font-bold hover:scale-105 transition-all duration-300 active:scale-95"
-              style={{ background: 'linear-gradient(135deg, #1A1A1A, #F4C430)', boxShadow: '0 4px 20px rgba(26,26,26,0.3)' }}>
+              style={{ background: 'linear-gradient(135deg, #555555, #F4C430)', boxShadow: '0 4px 20px rgba(85,85,85,0.3)' }}>
               Book a Demo
             </button>
-            <button className="px-8 py-4 text-text-primary rounded-full font-bold hover:scale-105 transition-all duration-300 active:scale-95 border-2 border-yellow-400 hover:bg-yellow-100 hover:text-white">
+            <button className="px-8 py-4 text-text-primary rounded-full font-bold hover:scale-105 transition-all duration-300 active:scale-95 border-2 border-yellow-400">
               See How It Works
             </button>
           </motion.div>
