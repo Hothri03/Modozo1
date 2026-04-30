@@ -303,10 +303,10 @@ const ImpactSection = () => {
         {/* ── HEADER WITH TOP-RIGHT INDICATOR ── */}
         <div className="relative w-full flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 px-2">
           <div className="max-w-2xl text-left">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight font-serif text-text-primary">
+            <h2 className="text-[clamp(1.875rem,4vw+1rem,3.75rem)] font-bold mb-4 tracking-tight font-serif text-text-primary leading-tight">
               Your Supply Chain, Before and After
             </h2>
-            <p className="text-gray-500 text-sm md:text-lg font-light">
+            <p className="text-gray-500 text-[clamp(0.875rem,1.5vw+0.25rem,1.125rem)] font-light leading-relaxed">
               Replace scattered spreadsheets and email threads with a single live workspace — and watch approvals, visibility, and velocity transform overnight.
             </p>
           </div>
@@ -337,7 +337,7 @@ const ImpactSection = () => {
         <div className="relative w-full py-10 md:py-16">
           <SvgLines phase={phase} />
 
-          <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 lg:gap-6 relative z-10 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch justify-center gap-4 lg:gap-6 relative z-10 w-full">
             {impacts.map((item, i) => (
               <motion.div
                 key={i}
@@ -345,7 +345,7 @@ const ImpactSection = () => {
                 variants={cardVariants}
                 initial="chaos"
                 animate={phase}
-                className={`relative flex-1 p-5 lg:p-8 rounded-[1.5rem] bg-white/60 border transition-all duration-1000 flex flex-col items-center text-center backdrop-blur-xl shadow-xl ${
+                className={`relative w-full p-5 lg:p-8 rounded-[1.5rem] bg-white/60 border transition-all duration-1000 flex flex-col items-center text-center backdrop-blur-xl shadow-xl ${
                   phase === 'ordered' ? 'border-yellow-400/60 shadow-yellow-400/20' : 'border-black/5 shadow-black/5'
                 }`}
               >

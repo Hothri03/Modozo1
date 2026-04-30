@@ -196,7 +196,7 @@ const FashionWorkflowsSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   return (
-    <section className="py-12 md:py-16 px-4 sm:px-6 md:px-12 rounded-[2rem] md:rounded-[3.5rem] mx-2 sm:mx-4 md:mx-12 my-6 md:my-8 border border-yellow-300 shadow-sm relative overflow-hidden w-auto max-w-[100vw] box-border" style={{ background: '#FFEFA8' }}>
+    <section className="py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 rounded-[2rem] md:rounded-[3.5rem] mx-2 sm:mx-4 md:mx-12 my-6 md:my-8 border border-yellow-300 shadow-sm relative overflow-hidden w-auto max-w-[100vw] box-border" style={{ background: '#FFEFA8' }}>
       
       {/* Background patterns */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-100/5 rounded-full blur-[100px]" />
@@ -210,10 +210,10 @@ const FashionWorkflowsSection = () => {
           className="mb-10"
         >
           <span className="text-text-primary/50 font-bold uppercase tracking-[0.3em] text-xs mb-3 block">Tailored for Industry</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-5 tracking-tight text-text-primary font-serif leading-tight">
+          <h2 className="text-[clamp(1.875rem,4vw+1rem,3rem)] font-bold mb-3 md:mb-5 tracking-tight text-text-primary font-serif leading-tight">
             Built Specifically for Fashion Workflows
           </h2>
-          <p className="text-base md:text-lg text-text-secondary max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-[clamp(1rem,2vw+0.5rem,1.125rem)] text-text-secondary max-w-3xl mx-auto font-light leading-relaxed">
             Modozo understands the lifecycle of apparel. Our structured workflow simulations accommodate everything from prototype tweaks to complex bulk manufacturing shifts.
           </p>
         </motion.div>

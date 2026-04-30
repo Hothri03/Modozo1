@@ -428,7 +428,7 @@ const BreakdownSection = () => {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 md:px-12 overflow-visible" style={{ background: '#FFEFA8' }}>
+    <section className="py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-20 overflow-visible" style={{ background: '#FFEFA8' }}>
       <div className="max-w-5xl mx-auto text-center w-full">
 
         {/* Heading */}
@@ -437,7 +437,7 @@ const BreakdownSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.7, ease: 'easeInOut' }}
-          className="text-3xl md:text-5xl font-bold mb-4 text-text-primary font-serif"
+          className="text-[clamp(1.875rem,4vw+1rem,3rem)] font-bold mb-4 text-text-primary font-serif leading-tight"
         >
           It&apos;s Not Just Delay<br className="hidden md:block" /> It&apos;s Lack of Structure
         </motion.h2>
@@ -447,13 +447,13 @@ const BreakdownSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, delay: 0.15, ease: 'easeInOut' }}
-          className="text-text-secondary text-base md:text-lg mb-14 max-w-xl mx-auto font-light"
+          className="text-text-secondary text-[clamp(1rem,2vw+0.5rem,1.125rem)] mb-10 md:mb-14 max-w-xl mx-auto font-light"
         >
           Hover on a problem to explore what's really breaking your workflow.
         </motion.p>
 
         {/* Cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
           {cards.map((card, i) => (
             <motion.div
               key={card.id}

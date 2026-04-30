@@ -205,15 +205,15 @@ const STEP_ANIMATIONS = [ TechpackAnim, ReviewAnim, SourcingAnim, VendorAnim, Sa
    WORKFLOW CARD (REPLACING CUBE FACE)
 ═════════════════════════════════════════════ */
 
-const WorkflowCard = ({ index, x, rotation, scale, isActive }) => {
+const WorkflowCard = ({ index, x, rotation, scale, isActive, isMobile }) => {
   const content = workflowSteps[index];
   const accentColor = workflowColors[index];
   const Anim = STEP_ANIMATIONS[index];
 
   return (
     <motion.div
-      style={{ x, scale, zIndex: 50 - index, background: 'white', borderColor: '#FFE27A' }}
-      className="absolute flex flex-col items-center justify-start py-8 px-6 rounded-[2.5rem] border-2 shadow-lg w-[220px] md:w-[260px] h-[400px] md:h-[460px] shrink-0"
+      style={isMobile ? { zIndex: 50 - index, background: 'white', borderColor: '#FFE27A' } : { x, scale, zIndex: 50 - index, background: 'white', borderColor: '#FFE27A' }}
+      className={`${isMobile ? 'relative mb-6' : 'absolute'} flex flex-col items-center justify-start py-8 px-6 rounded-[2.5rem] border-2 shadow-lg w-full max-w-[280px] md:w-[260px] h-auto min-h-[400px] md:min-h-[460px] shrink-0`}
     >
       <div className="relative z-10 flex flex-col items-center w-full">
         <span className="font-extrabold text-[10px] uppercase tracking-[0.2em] mb-4 block text-text-primary/50">
@@ -233,6 +233,41 @@ const WorkflowCard = ({ index, x, rotation, scale, isActive }) => {
       
       
     </motion.div>
+  );
+};
+
+/* ═════════════════════════════════════════════
+   DESKTOP WORKFLOW CARD WRAPPER
+═════════════════════════════════════════════ */
+const DesktopWorkflowCard = ({ index, windowWidth, dispersion }) => {
+  const baseCardWidth = 260;
+  const targetGap = 24;
+  
+  const maxTotalWidth = windowWidth - 40;
+  const maxStepSize = maxTotalWidth / 6;
+  
+  const finalStepSize = Math.min(baseCardWidth + targetGap, maxStepSize);
+  
+  const availableWidthPerCard = finalStepSize - targetGap;
+  const sizeScaleFactor = Math.min(1, availableWidthPerCard / baseCardWidth);
+  
+  const targetX = (index - 2.5) * finalStepSize;
+  
+  const x = useTransform(dispersion, [0, 1], [0, targetX]);
+  const rotation = 0;
+  
+  const spreadScale = useTransform(dispersion, [0, 1], [0.85, 1]);
+  const scale = useTransform(spreadScale, (s) => s * sizeScaleFactor);
+  
+  return (
+    <WorkflowCard 
+      index={index} 
+      x={x} 
+      rotation={rotation} 
+      scale={scale}
+      isActive={true}
+      isMobile={false}
+    />
   );
 };
 
@@ -273,69 +308,42 @@ const WorkflowSection = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[400vh]" style={{ background: 'linear-gradient(180deg, #FFF7D6 0%, #FFEFA8 50%, #FFE27A 100%)' }}>
-      <div className="sticky top-0 h-[100svh] w-full flex flex-col items-center justify-start overflow-hidden px-4 md:px-6 pt-20 md:pt-24">
+    <section ref={containerRef} className={`relative ${windowWidth < 1024 ? 'min-h-screen py-16' : 'h-[400vh]'}`} style={{ background: 'linear-gradient(180deg, #FFF7D6 0%, #FFEFA8 50%, #FFE27A 100%)' }}>
+      <div className={`${windowWidth < 1024 ? 'w-full flex flex-col items-center justify-start px-4 sm:px-6' : 'sticky top-0 h-[100svh] w-full flex flex-col items-center justify-start overflow-hidden px-4 md:px-6 pt-20 md:pt-24'}`}>
         
         {/* Header */}
-        <div className="text-center z-50 w-full px-4 mb-10 md:mb-12 relative">
+        <div className="text-center z-50 w-full px-2 mb-10 md:mb-12 relative">
           <motion.h2 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-3 md:mb-4 tracking-tighter font-serif px-2"
+            className="text-[clamp(1.875rem,4vw+1rem,3.75rem)] font-bold text-text-primary mb-3 md:mb-4 tracking-tighter font-serif leading-tight"
           >
             A Clear Flow From Design to Production
           </motion.h2>
-          <p className="text-text-secondary text-sm md:text-lg font-medium max-w-2xl mx-auto">
+          <p className="text-text-secondary text-[clamp(0.875rem,1.5vw+0.25rem,1.125rem)] font-medium max-w-2xl mx-auto">
             Experience a synchronized workflow where every transition is seamless and every step is visible.
           </p>
         </div>
 
         {/* Cards Container */}
-        <div className="relative w-full h-[500px] flex items-center justify-center mt-2 md:mt-4">
-          {workflowSteps.map((_, i) => {
-            // Cards are approx 220-260px wide. We ensure they fit in the viewport.
-            // Calculate layout based on window width and specified gaps
-            const baseCardWidth = windowWidth < 768 ? 200 : 260;
-            const targetGap = windowWidth < 768 ? 16 : 24;
-            
-            // maxStepSize ensures they fit within screen (40px padding)
-            const maxTotalWidth = windowWidth - 40;
-            const maxStepSize = maxTotalWidth / 6;
-            
-            // finalStepSize is the distance between card centers
-            const finalStepSize = Math.min(baseCardWidth + targetGap, maxStepSize);
-            
-            // If the cards are too wide to fit with the gap, we must scale them down
-            const availableWidthPerCard = finalStepSize - targetGap;
-            const sizeScaleFactor = Math.min(1, availableWidthPerCard / baseCardWidth);
-            
-            const targetX = (i - 2.5) * finalStepSize;
-            
-            // X position transformation (uses translateX via framer-motion 'x' prop)
-            const x = useTransform(dispersion, [0, 1], [0, targetX]);
-            
-            // No rotation - cards remain flat as per user request
-            const rotation = 0;
-            
-            // Scale enhancement: blend the spread scale with the size constraint scale
-            const spreadScale = useTransform(dispersion, [0, 1], [0.85, 1]);
-            const scale = useTransform(spreadScale, (s) => s * sizeScaleFactor);
-            
-            // Activate cards once they are mostly spread
-            const isActive = true;
-
-            return (
-              <WorkflowCard 
-                key={i} 
-                index={i} 
-                x={x} 
-                rotation={rotation} 
-                scale={scale}
-                isActive={isActive}
+        {windowWidth < 1024 ? (
+          <div className="w-full flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-6 mt-4">
+            {workflowSteps.map((_, i) => (
+              <WorkflowCard key={i} index={i} x={0} rotation={0} scale={1} isActive={true} isMobile={true} />
+            ))}
+          </div>
+        ) : (
+          <div className="relative w-full h-[500px] flex items-center justify-center mt-2 md:mt-4">
+            {workflowSteps.map((_, i) => (
+              <DesktopWorkflowCard 
+                key={`desktop-${i}`}
+                index={i}
+                windowWidth={windowWidth}
+                dispersion={dispersion}
               />
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

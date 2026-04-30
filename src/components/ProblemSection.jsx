@@ -64,7 +64,7 @@ const HiddenFrictionVisual = ({ scrollYProgress }) => {
   ];
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[350px] flex items-center justify-between py-6 rounded-3xl border overflow-hidden px-4 sm:px-10" style={{ background: '#FFFDF0', borderColor: '#FFE27A' }}>
+    <div className="relative w-full h-[300px] sm:h-[350px] flex items-center justify-between py-6 rounded-3xl border overflow-hidden px-2 sm:px-10" style={{ background: '#FFFDF0', borderColor: '#FFE27A' }}>
       
       {/* LAGGING CONNECTIONS & FLOW INTERRUPTION with 8-second Fade Disruption */}
       <motion.div 
@@ -128,7 +128,7 @@ const HiddenFrictionVisual = ({ scrollYProgress }) => {
               ease: "easeOut",
               x: { delay: i * 0.2 + 0.7, duration: 0.4 } // Shake happens after snap
             }}
-            className="flex-1 max-w-[70px] sm:max-w-[100px] flex group"
+            className="flex-1 max-w-[60px] sm:max-w-[100px] flex group"
           >
             {/* The looping drifting node */}
             <motion.div
@@ -191,7 +191,7 @@ const ProblemSection = () => {
   return (
     <section 
       ref={containerRef} 
-      className="relative rounded-t-[2rem] md:rounded-t-[3rem] py-16 md:py-24 px-4 sm:px-6 md:px-20 overflow-hidden w-full max-w-[100vw] shadow-sm" style={{ background: '#FFF7D6' }}
+      className="relative rounded-t-[2rem] md:rounded-t-[3rem] py-12 md:py-16 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden w-full max-w-[100vw] shadow-sm" style={{ background: '#FFF7D6' }}
     >
 
       {/* Subtle Background Grid */}
@@ -212,7 +212,7 @@ const ProblemSection = () => {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-text-primary relative z-10 font-serif leading-tight pr-4"
+            className="text-[clamp(1.875rem,4vw+0.5rem,3rem)] font-bold mb-4 md:mb-6 text-text-primary relative z-10 font-serif leading-tight pr-0 lg:pr-4"
           >
             Everything Looks Fine Until It Doesn’t
           </motion.h2>
@@ -222,7 +222,7 @@ const ProblemSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
-            className="text-base md:text-xl text-text-secondary mb-10 max-w-lg mx-auto lg:mx-0 font-medium relative z-10"
+            className="text-[clamp(1rem,2vw+0.5rem,1.25rem)] text-text-secondary mb-8 md:mb-10 max-w-lg mx-auto lg:mx-0 font-medium relative z-10"
           >
             The problem isn’t visible at first. It builds up across every step.
           </motion.p>

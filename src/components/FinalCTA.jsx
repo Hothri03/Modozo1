@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const FinalCTA = () => {
   return (
     <section id="contact" className="pt-20 pb-6 md:pt-32 md:pb-8 px-4 sm:px-6 bg-yellow-50 text-text-primary overflow-hidden w-full max-w-[100vw]">
-      <div className="max-w-[1500px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-start gap-16 lg:gap-12 w-full px-2 md:px-12 xl:px-16">
+      <div className="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_auto_1fr] items-start gap-16 lg:gap-12 w-full px-2 md:px-12 xl:px-16">
         
         {/* LEFT COLUMN: Company Details */}
-        <div className="order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left mt-1 lg:mt-1 lg:justify-self-start lg:-translate-x-8 xl:-translate-x-12">
+        <div className="order-2 md:order-2 lg:order-1 flex flex-col items-center md:items-start text-center md:text-left mt-1 lg:mt-1 lg:justify-self-start lg:-translate-x-8 xl:-translate-x-12">
           <h3 className="text-xl md:text-2xl font-bold tracking-tighter uppercase mb-6 font-serif">
             MODOZO
           </h3>
@@ -33,13 +33,13 @@ const FinalCTA = () => {
         </div>
 
         {/* CENTER COLUMN: Main CTA */}
-        <div className="order-1 lg:order-2 flex flex-col items-center text-center justify-self-center max-w-[800px]">
+        <div className="order-1 md:col-span-2 lg:col-span-1 md:order-1 lg:order-2 flex flex-col items-center text-center justify-self-center max-w-[800px]">
           <motion.h2 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl lg:text-[56px] font-bold mb-6 tracking-tight font-serif text-text-primary mx-auto leading-[1.1]"
+            className="text-[clamp(2.25rem,4vw+1rem,3.5rem)] font-bold mb-6 tracking-tight font-serif text-text-primary mx-auto leading-[1.1]"
           >
             Launch Collections Faster <br className="hidden lg:block" />
             With Less Chaos
@@ -50,7 +50,7 @@ const FinalCTA = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base md:text-lg text-text-secondary mb-10 mx-auto font-light leading-relaxed max-w-2xl"
+            className="text-[clamp(1rem,2vw+0.5rem,1.125rem)] text-text-secondary mb-10 mx-auto font-light leading-relaxed max-w-2xl"
           >
             Bring your entire fashion workflow into one connected system <br className="hidden lg:block" />
             built for speed, clarity, and control.
@@ -73,7 +73,7 @@ const FinalCTA = () => {
         </div>
 
         {/* RIGHT COLUMN: Links */}
-        <div className="order-3 lg:order-3 flex flex-col items-center lg:items-end text-center lg:text-right justify-self-center lg:justify-self-end mt-1 lg:mt-1">
+        <div className="order-3 md:order-3 lg:order-3 flex flex-col items-center md:items-end text-center md:text-right justify-self-center md:justify-self-end mt-1 lg:mt-1">
           <h4 className="text-lg font-bold text-text-primary mb-6 tracking-tight">
             Do you know us?
           </h4>

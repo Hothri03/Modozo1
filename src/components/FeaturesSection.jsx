@@ -247,26 +247,26 @@ const FeatureStrip = ({ feature, index }) => {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.05 }}
       className={`
-        flex items-center w-full px-6 md:px-10 h-[90px] md:h-[105px]
+        flex w-full px-4 sm:px-6 md:px-10 py-4 sm:py-0 h-auto sm:h-[90px] md:h-[105px]
         rounded-[20px] shadow-[0_4px_16px_rgba(0,0,0,0.05)]
         group cursor-default transition-all duration-400 border border-transparent
         ${isHovered ? 'shadow-[0_12px_24px_rgba(0,0,0,0.08)] border-yellow-400/30' : ''}
-        ${isEven ? 'flex-row' : 'flex-row-reverse'}
+        ${isEven ? 'flex-col sm:flex-row' : 'flex-col sm:flex-row-reverse'}
       `}
       style={{ background: 'white' }}
     >
-      {/* 50% Text Section */}
-      <div className={`w-1/2 flex flex-col ${isEven ? 'items-start text-left' : 'items-end text-right'}`}>
-        <h3 className="text-[14px] md:text-[16px] font-bold text-text-primary tracking-tight leading-tight mb-1">
+      {/* 50% Text Section (Full width on mobile) */}
+      <div className={`w-full sm:w-1/2 flex flex-col justify-center ${isEven ? 'items-center sm:items-start text-center sm:text-left' : 'items-center sm:items-end text-center sm:text-right'}`}>
+        <h3 className="text-[16px] md:text-[18px] font-bold text-text-primary tracking-tight leading-tight mb-2 sm:mb-1">
           {feature.title}
         </h3>
-        <p className="text-[11px] md:text-[12px] text-text-muted font-medium leading-tight max-w-[280px]">
+        <p className="text-[12px] md:text-[13px] text-text-muted font-medium leading-relaxed sm:leading-tight max-w-[280px]">
           {feature.desc}
         </p>
       </div>
 
-      {/* 50% Animation Section */}
-      <div className="w-1/2 flex items-center justify-center">
+      {/* 50% Animation Section (Full width on mobile) */}
+      <div className="w-full sm:w-1/2 flex items-center justify-center mt-4 sm:mt-0">
         <motion.div
           animate={{ 
             opacity: isHovered ? 1 : 0.5,
@@ -284,15 +284,15 @@ const FeatureStrip = ({ feature, index }) => {
 
 const FeaturesSection = () => {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden" style={{ background: '#FFF7D6' }}>
-      <div className="max-w-[1000px] mx-auto px-6">
+    <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden" style={{ background: '#FFF7D6' }}>
+      <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-6 md:mb-8 text-center">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-serif text-text-primary"
+            className="text-[clamp(2rem,4vw+1rem,3.75rem)] font-bold tracking-tighter font-serif text-text-primary leading-tight px-2"
           >
             What Makes This Powerful
           </motion.h2>
